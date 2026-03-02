@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "google-nexus-orchestrator",
+  "main": "workers/api/src/index.ts",
+  "compatibility_date": "2026-02-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "58250b56ae5b45d940cd6e4b64314c01",
+
+  "vars": {
+    "ENVIRONMENT": "production",
+    "SYSTEM_NAME": "Google Nexus Orchestrator",
+    "OWNER": "Rick Jefferson — RJ Business Solutions"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "google-nexus-orchestrator-db",
+      "database_id": ""
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": ""
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "gno-assets"
+    }
+  ],
+
+  "ai": {
+    "binding": "AI"
+  },
+
+  "queues": {
+    "producers": [
+      {
+        "binding": "JOBS",
+        "queue": "gno-agent-jobs"
+      }
+    ]
+  }
+}
